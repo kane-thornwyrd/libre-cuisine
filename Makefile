@@ -21,7 +21,7 @@
 
 # Build configuration
 
-BUILD = pages
+BUILD = docs
 MAKEFILE = Makefile
 OUTPUT_FILENAME = index
 METADATA = metadata.yml
