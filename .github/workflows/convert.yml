@@ -20,6 +20,9 @@ jobs:
         with:
           pandoc-version: '2.11.4'
 
+      - name: Cabal update
+        run: cabal update
+
       - name: Setup pandoc sidenote
         run: cabal install pandoc-sidenote-0.22.1.0
 
