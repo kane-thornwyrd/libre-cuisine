@@ -21,7 +21,7 @@ jobs:
           pandoc-version: '2.11.4'
 
       - name: Setup pandoc sidenote
-        run: cabal install pandoc-sidenote
+        run: cabal install pandoc-sidenote-0.22.1.0
 
       - name: Convert
         run: make
