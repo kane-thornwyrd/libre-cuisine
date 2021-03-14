@@ -13,11 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: docker://pandoc/latex:2.9
-      - name: Convert markdowns
         run: make
 
       - uses: actions/upload-artifact@master
-      - name: Update HTML Pages
         with:
           name: html-Pages
           path: docs/**
