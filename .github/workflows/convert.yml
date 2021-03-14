@@ -16,7 +16,7 @@ jobs:
         with:
           pandoc-version: '2.11.4'
 
-      - uses: ./.github/actions/go-make-action
+      - uses: actions/go-make-action
         with:
           target: 'all'
 
