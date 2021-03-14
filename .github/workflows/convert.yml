@@ -3,8 +3,6 @@ name: Converting markdown into html
 on:
   push:
     branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
 
   workflow_dispatch:
 
@@ -13,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@latest
 
       - name: Setup Pandoc
         uses: r-lib/actions/setup-pandoc@v1
@@ -32,8 +30,8 @@ jobs:
       - name: Convert
         run: make
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@master
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: html-Pages
-          path: docs/**
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
