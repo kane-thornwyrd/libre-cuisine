@@ -12,8 +12,10 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-latest
     steps:
-      - uses: docker://pandoc/latex:2.9
-        run: make
+      - uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.11.4'
+      - run: make
 
       - uses: actions/upload-artifact@master
         with:
