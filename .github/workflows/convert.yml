@@ -20,13 +20,15 @@ jobs:
         with:
           pandoc-version: '2.11.4'
       
-      - name: Setup pandoc sidenote
-        run: |
-          git clone https://github.com/jez/pandoc-sidenote
-          cd pandoc-sidenote
-          stack build
-          stack install
+      # - name: Setup pandoc sidenote
+      #   run: |
+      #     git clone https://github.com/jez/pandoc-sidenote
+      #     cd pandoc-sidenote
+      #     stack build
+      #     stack install
 
+      - name: Setup pandoc sidenote
+        run: apt-get install pandoc-sidenote
 
       - name: wtf is here
         run: ls -lA
