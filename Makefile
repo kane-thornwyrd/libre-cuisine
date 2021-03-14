@@ -28,8 +28,6 @@ METADATA = metadata.yml
 CHAPTERS = content/*.md
 TOC = --toc --toc-depth 2
 METADATA_ARGS = --shift-heading-level-by=1 --metadata-file $(METADATA)
-IMAGES = images
-COVER_IMAGE = images/cover.png
 MATH_FORMULAS = --webtex
 
 # Chapters content
@@ -49,7 +47,7 @@ HTML_ARGS = --template templates/html.html --standalone --to html5
 
 # Per-format file dependencies
 
-BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(METADATA) $(IMAGES)
+BASE_DEPENDENCIES = $(MAKEFILE) $(CHAPTERS) $(METADATA)
 HTML_DEPENDENCIES = $(BASE_DEPENDENCIES)
 
 ####################################################################################################
