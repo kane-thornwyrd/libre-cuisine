@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup pandoc
-        run: sudo apt-get install pandoc@2.11.4 pandoc-sidenote
+        run: sudo apt-get install pandoc=2.11.4 pandoc-sidenote
 
       - name: Convert
         run: make
