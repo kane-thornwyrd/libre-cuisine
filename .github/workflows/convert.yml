@@ -26,6 +26,9 @@ jobs:
       - name: Setup pandoc sidenote
         run: cabal install pandoc-sidenote-0.22.1.0
 
+      - name: bin linking
+        run: mkdir -p /home/runner/.local/bin && ln -s /home/runner/.cabal/bin/pandoc-sidenote /home/runner/.local/bin/pandoc-sidenote
+
       - name: Convert
         run: make
 
