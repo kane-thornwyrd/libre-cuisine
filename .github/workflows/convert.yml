@@ -20,10 +20,6 @@ jobs:
         with:
           pandoc-version: '2.11.4'
       
-      - name: Setup haskell stack
-        run: |
-          curl -sSL https://get.haskellstack.org/ | sh
-      
       - name: Setup pandoc sidenote
         run: |
           git clone https://github.com/jez/pandoc-sidenote
