@@ -28,10 +28,7 @@ jobs:
       #     stack install
 
       - name: Setup pandoc sidenote
-        run: apt-get install pandoc-sidenote
-
-      - name: wtf is here
-        run: ls -lA
+        run: sudo apt-get install pandoc-sidenote
 
       - name: Convert
         run: make
