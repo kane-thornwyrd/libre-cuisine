@@ -1,4 +1,4 @@
-name: Advanced Usage
+name: Converting markdown into html
 
 on:
   push:
@@ -9,16 +9,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  convert:
+  mumbojumbo:
     runs-on: ubuntu-latest
     steps:
-      - uses: r-lib/actions/setup-pandoc@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v1
         with:
           pandoc-version: '2.11.4'
 
-      - run: make all
+      - name: wtf is here
+        run: ls -lA
 
-      - uses: actions/upload-artifact@master
+      - name: Convert
+        run: make
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@master
         with:
           name: html-Pages
           path: docs/**
